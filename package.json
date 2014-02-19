@@ -1,22 +1,22 @@
 {
-	"name"    : "x-configs",
-	"version" : "0.0.0",
-	"license" : "MIT",
-	"description" : "simple loading configuration settings depending on an environment variable NODE_ENV like development, test, production",
-	"keywords": [
-		"x-x",
-		"x-component",
-		"configuration"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/x-component/x-configs.git"
-	},
-	"devDependencies":{
-		"markdox" : "~0.1"
-	},
-	"main" : "config.js",
-	"scripts": {
-		"prepublish" : "markdox -o ./README.md ./config.js"
-	}
+  "name": "x-configs",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "simple loading configuration settings depending on an environment variable NODE_ENV like development, test, production",
+  "keywords": [
+    "x-x",
+    "x-component",
+    "configuration"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/x-component/x-configs.git"
+  },
+  "devDependencies": {
+    "markdox": "~0.1"
+  },
+  "main": "config.js",
+  "scripts": {
+    "prepublish": "markdox -o ./README.md ./config.js"
+  }
 }
