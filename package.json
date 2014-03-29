@@ -1,7 +1,9 @@
 {
   "name": "x-configs",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": {
+    "type": "MIT"
+  },
   "description": "simple loading configuration settings depending on an environment variable NODE_ENV like development, test, production",
   "keywords": [
     "x-x",
@@ -13,10 +15,19 @@
     "url": "https://github.com/x-component/x-configs.git"
   },
   "devDependencies": {
-    "markdox": "~0.1"
+    "dox-basic": "~0.0",
+    "projectz": "~0.3"
   },
   "main": "config.js",
   "scripts": {
-    "prepublish": "markdox -o ./README.md ./config.js"
+    "prepublish": "cat ./config.js | node ./node_modules/dox-basic/bin/dox-basic -m -t \"[![Build Status](https://travis-ci.org/x-component/$npm_package_name.png?v$npm_package_version)](https://travis-ci.org/x-component/$npm_package_name)\" > README.md; node ./node_modules/projectz/bin/projectz compile"
+  },
+  "author": "",
+  "maintainers": [
+    ""
+  ],
+  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/x-component/x-configs/issues"
   }
 }

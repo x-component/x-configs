@@ -1,0 +1,15 @@
+{
+  "name": "x-configs",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "simple loading configuration settings depending on an environment variable NODE_ENV like development, test, production",
+  "keywords": [
+    "x-x",
+    "x-component",
+    "configuration"
+  ],
+  "main": "config.js",
+  "scripts": [
+    "config.js"
+  ]
+}
