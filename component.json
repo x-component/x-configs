@@ -1,6 +1,6 @@
 {
   "name": "x-configs",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "license": "MIT",
   "description": "simple loading configuration settings depending on an environment variable NODE_ENV like development, test, production",
   "keywords": [
