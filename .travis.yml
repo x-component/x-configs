@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '0.10'
+- '0.11'
+deploy:
+  provider: npm
+  email: maurice.schoenmakers@x-x.io
+  api_key:
+    secure: dlrGDSGjm1Kg49pvcgbsMcFrZWL80IWFqsB5xWi7VoxPW91BgEryunQL5stx8QGwsZ9Ai8vbcjJ1/aXx2GhGToSwhqVsO23s9Uv7ISE//YLqyyjtUmhy99FpTiI1ha2B3OqeUOx3QSI0dYcawbitzXCBwJanevPz9EO4s6G0i+E=
+  on:
+    tags: true
+    repo: x-component/x-configs
+env:
+  global:
+  - secure: U1WYupjLHJkFXDaFYXRsShCZTWIkKoHTaOoIJ9oxoS5PS/wDp+mEs/rhS4sDUrChviSkSySlhGunU3XN5T6Ul+efT9EoPny2NrDoD9tkKD55588VKj2rAlZMlEk090QQ+6M3w7MeEbgZbYVCcB9bikzwNt6SLtXv5SHpX3vcV+s=
+  - secure: ClW/YehBI8GrGCl1EGJHlFjq2Hrvjhxj+iEQqko5i+6R1JEhlfSCgosI/IjBZ7z6rGKb3kzeENU+Olyf1kMB3qNmkNfLqJZW2axA9YmX2sEgAo8DT7fi7c8aK9k2tGh7LQPiIfNGjTm/5LKd5RY6CnjRzy4IC/BuiaPS8BM1j7c=
