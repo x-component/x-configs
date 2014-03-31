@@ -18,6 +18,7 @@
     "x-process": "~0.0"
   },
   "devDependencies": {
+    "x-common": "~0.0",
     "x-publish": "~0.0",
     "x-test": "~0.0"
   },
