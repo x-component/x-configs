@@ -1,6 +1,6 @@
 {
   "name": "x-configs",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": {
     "type": "MIT"
   },
@@ -21,7 +21,7 @@
   "main": "config.js",
   "scripts": {
     "prepublish": "./node_modules/x-publish/scripts/prepublish.sh config.js",
-	"test": "./node_modules/x-test/scripts/test.sh ./test"
+    "test": "./node_modules/x-test/scripts/test.sh ./test"
   },
   "author": "",
   "maintainers": [
