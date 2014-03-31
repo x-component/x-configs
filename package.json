@@ -19,7 +19,7 @@
   },
   "main": "config.js",
   "scripts": {
-    "prepublish": "./node_modules/x-publish/prepublish.sh ./config.js"
+    "prepublish": "./node_modules/x-publish/scripts/prepublish.sh common.js"
   },
   "author": "",
   "maintainers": [
