@@ -8,6 +8,9 @@
     "x-component",
     "configuration"
   ],
+  "dependencies": {
+    "x-process": "~0.0"
+  },
   "main": "config.js",
   "scripts": [
     "config.js"

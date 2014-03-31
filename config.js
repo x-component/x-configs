@@ -1,5 +1,7 @@
 'use strict';
 
+var process = require('x-process');
+
 module.exports =
 /**
  * x-configs
