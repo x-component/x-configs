@@ -1,6 +1,6 @@
 {
   "name": "x-configs",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "license": {
     "type": "MIT"
   },
@@ -15,12 +15,12 @@
     "url": "https://github.com/x-component/x-configs.git"
   },
   "dependencies": {
-    "x-process": "~0.0"
+    "x-process": "1.x.x"
   },
   "devDependencies": {
-    "x-common": "~0.0",
-    "x-publish": "~0.0",
-    "x-test": "~0.0"
+    "x-common": "1.x.x",
+    "x-publish": "1.x.x",
+    "x-test": "1.x.x"
   },
   "main": "config.js",
   "scripts": {
@@ -34,16 +34,5 @@
   "contributors": [],
   "bugs": {
     "url": "https://github.com/x-component/x-configs/issues"
-  },
-  "testling": {
-    "harness": "mocha-tdd",
-    "files": "test/*.tdd.test.js",
-    "browsers": [
-      "ie/latest",
-      "chrome/latest",
-      "firefox/latest",
-      "iphone/latest",
-      "android-browser/latest"
-    ]
   }
 }
