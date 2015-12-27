@@ -3,7 +3,6 @@
 [Build Status](https://travis-ci.org/x-component/x-configs.png?v1.0.0)](https://travis-ci.org/x-component/x-configs)
 
 - [./config.js](#configjs) 
-- [./scripts/webpack.config.js](#scriptswebpackconfigjs) 
 - [./test/config.js](#testconfigjs) 
 
 # ./config.js
@@ -79,18 +78,6 @@
   
   If env is a name beginning with an '_' p.e. '_variant', then this value is combined with
   the current NODE_ENV value p.e. 'production'. The key tried first is then: 'production_variant'.
-
-# ./scripts/webpack.config.js
-
-  - [plugins](#plugins)
-
-## plugins
-
-  module: {
-  		loaders: [
-  			{ test: /\.png$/, loader: "url-loader?limit=10000&minetype=image/png" }
-  		]
-  	},
 
 # ./test/config.js
 

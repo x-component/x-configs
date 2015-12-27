@@ -15,16 +15,16 @@
     "url": "https://github.com/x-component/x-configs.git"
   },
   "dependencies": {
-    "x-process": "1.x.x"
+    "x-process": "1.x.x",
+    "x-common": "1.x.x"
   },
   "devDependencies": {
-    "x-common": "1.x.x",
     "x-publish": "1.x.x",
     "x-test": "1.x.x"
   },
   "main": "config.js",
   "scripts": {
-    "prepublish": "./node_modules/x-publish/scripts/prepublish.sh config.js",
+    "prepublish": "./node_modules/x-publish/scripts/prepublish.sh",
     "test": "./node_modules/x-test/scripts/test.sh ./test"
   },
   "author": "",

@@ -1,8 +1,9 @@
 'use strict';
 
-var process = require('x-process');
+var
+	process = require('x-process'),
+	merge   = require('x-common').merge;
 
-module.exports =
 /**
  * x-configs
  * ---------
@@ -64,9 +65,31 @@ module.exports =
  * @param env       Optional name of the environment, default is the NODE_ENV value.
  * @return          The config object found or undefined
  */
-function ( filename, env/*! if begins with '_' it appended to current env */ ) {
+module.exports = function F( filename, env/*! if begins with '_' it appended to current env */ ) {
 	
-	var configs = require(filename), config, index_underscore, tmp, suffix='';
+	var
+		configs = require(filename),
+		config  = F.config(require(filename),env),
+		
+		first   = filename.    indexOf('/node_modules/'),
+		last    = filename.lastIndexOf('/node_modules/');
+	
+	// load overrides from a root based file: config/<module>.js
+	if(~first && ~last ) try {
+		var
+			rest        = filename.substring(last+'/node_modules/'.length),
+			module_end  = rest.indexOf('/'),
+			module_name = ~module_end ? rest.substring(0,module_end) : null,
+			overrides   = module ? require(filename.substring(0,first)+'/config/'+ module_name ) : null;
+	} catch(e){ console.log(e); }
+	
+	return overrides ? merge(config,overrides) : config;
+};
+
+// extract a config from an object property based on the environment
+module.exports.config = function( configs, env ){
+	
+	var config, tmp, suffix='';
 	
 	if( env && '_' === env.charAt(0)){suffix=env;env=null;}
 	
@@ -77,11 +100,13 @@ function ( filename, env/*! if begins with '_' it appended to current env */ ) {
 	if( env && configs ){
 		
 		do{
-			config= (tmp=configs[env]) ? tmp :  void 0;
-		} while  ( !config                       // while no config was found
-		        && -1<(tmp=env.lastIndexOf('_')) // and we can remove a _suffix
-		        && (env=env.substring(0,tmp) )   // and the resulting env is not empty
-		         );                              // try again
+			config= (tmp=configs[env]) ? tmp :  null;
+		} while  ( !config                     // while no config was found
+		        && ~(tmp=env.lastIndexOf('_')) // and we can remove a _suffix
+		        && (env=env.substring(0,tmp) ) // and the resulting env is not empty
+		         );                            // try again
 	}
+	
 	return config;
 };
+
