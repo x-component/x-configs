@@ -75,13 +75,22 @@ module.exports = function F( filename, env/*! if begins with '_' it appended to 
 		last    = filename.lastIndexOf('/node_modules/');
 	
 	// load overrides from a root based file: config/<module>.js
-	if(~first && ~last ) try {
+	if(~first && ~last ){
 		var
-			rest        = filename.substring(last+'/node_modules/'.length),
-			module_end  = rest.indexOf('/'),
-			module_name = ~module_end ? rest.substring(0,module_end) : null,
-			overrides   = module ? require(filename.substring(0,first)+'/config/'+ module_name ) : null;
-	} catch(e){ console.log(e); }
+			rest               = filename.substring(last+'/node_modules/'.length),
+			module_end         = rest.indexOf('/'),
+			module_name        = ~module_end ? rest.substring(0,module_end) : null,
+			overrides_filename = filename.substring(0,first)+'/config/'+ module_name,
+			exists             = false,
+			overrides          = null;
+		
+		try { fs.accessSync(overrides_filename + '.js'   ,fs.R_OK); exists=true; } catch(e){}
+		try { fs.accessSync(overrides_filename + '.json' ,fs.R_OK); exists=true; } catch(e){}
+		
+		if(exists) try {
+			overrides = require(overrides_filename);
+		} catch(e){ console.log(e); }
+	}
 	
 	return overrides ? merge(config,overrides) : config;
 };
