@@ -89,7 +89,7 @@ module.exports = function F( filename, env/*! if begins with '_' it appended to 
 		try { fs.accessSync(overrides_filename + '.json' ,fs.R_OK); exists=true; } catch(e){}
 		
 		if(exists) try {
-			overrides = require(overrides_filename);
+			overrides = F.config(require(overrides_filename),env);
 		} catch(e){ console.log(e); }
 	}
 	
