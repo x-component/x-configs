@@ -1,6 +1,7 @@
 'use strict';
 
 var
+	fs      = require('fs'),
 	process = require('x-process'),
 	merge   = require('x-common').merge;
 
